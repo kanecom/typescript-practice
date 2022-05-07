@@ -1,3 +1,3 @@
-const message: string = "Hello, world!";
-
-console.log(message)
+const greeting: string = "Hello, ";
+const tagret: string = "world!";
+console.log(greeting + tagret);
