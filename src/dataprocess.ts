@@ -10,13 +10,13 @@ type User = {
   Mary Sue,14,1
   `;
   
-const users = data.split("\n")
-    .filter((s: string) => s !== "")
-    .map((s: string) => {
-        const [name, age, premiumUser] = s.split(",");
-        const user: User = { name, age: Number(age), premiumUser: premiumUser === "1" };
+const users: User[] = data.split("\n")
+    .filter((line: string) => line !== "")
+    .map((line: string) => {
+        const [name, ageString, premiumUserString] = line.split(",");
+        const user: User = { name, age: Number(ageString), premiumUser: premiumUserString === "1" };
         return user;
-  })
+    });
 
   // ここにコードを足す
   
