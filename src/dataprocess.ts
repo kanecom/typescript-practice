@@ -14,7 +14,7 @@ const users = data.split("\n")
     .filter((s: string) => s !== "")
     .map((s: string) => {
         const [name, age, premiumUser] = s.split(",");
-        const user: User = { name, age: Number(age), premiumUser: Boolean(premiumUser) };
+        const user: User = { name, age: Number(age), premiumUser: premiumUser === "1" };
         return user;
   })
 
