@@ -83,3 +83,22 @@ const optionalObj2: FooBarBazObj = {
     bar: true,
     baz: 123,
 }
+
+//部分型
+type Animal = {
+    age: number,
+};
+
+type Human = {
+    age: number,
+    name: string,
+};
+
+const human: Human = {
+    age: 26, name: "太郎"
+};
+
+const animal: Animal = human;
+
+console.log(animal.age); // OK
+// console.log(animal.name); //ERROR
