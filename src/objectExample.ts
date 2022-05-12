@@ -33,3 +33,53 @@ const obj2 = {
 };
 
 console.log(obj2);
+
+// オブジェクトリテラル (型あり)
+const typedObj: {
+    foo: number;
+    bar: string;
+} = {
+    foo: 123,
+    bar: "Hello world!",
+};
+
+// type文
+type FooBarObj = {
+    foo: number;
+    bar: string;
+};
+
+const fooBarObj: FooBarObj = {
+    foo: 123,
+    bar: "Hello world!",
+};
+
+// interface
+// 名前がかぶるのでJavaみたいな命名をしてしまった
+interface IFooBar {
+    foo: number;
+    bar: string;
+};
+
+const fooBarObject: IFooBar = {
+    foo: 123,
+    bar: "xxx",
+};
+
+// オプショナルなプロパティ
+type FooBarBazObj = {
+    foo: boolean;
+    bar: boolean;
+    baz?: number;
+};
+
+const optionalObj1: FooBarBazObj = {
+    foo: true,
+    bar: true,
+}
+
+const optionalObj2: FooBarBazObj = {
+    foo: true,
+    bar: true,
+    baz: 123,
+}
