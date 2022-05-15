@@ -102,3 +102,35 @@ const animal: Animal = human;
 
 console.log(animal.age); // OK
 // console.log(animal.name); //ERROR
+
+// 型引数
+type UserData<T> = {
+    name: string;
+    child: T;
+};
+
+type Family<Parent, Child> = {
+    mother: Parent;
+    father: Parent;
+    child: Child;
+};
+
+const family: Family<number, string> = {
+    mother: 0,
+    father: 100,
+    child: "1000",
+};
+
+type HasName = {
+    name: string;
+};
+
+// 型引数の制約
+
+type Group<Leader extends HasName, Member extends HasName> = {
+    leader: Leader;
+    member: Member;
+};
+
+// type T = Group<number, string>; // ERROR
+type T = Group<Human, Human>; // OK
