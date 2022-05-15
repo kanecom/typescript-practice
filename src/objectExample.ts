@@ -134,3 +134,32 @@ type Group<Leader extends HasName, Member extends HasName> = {
 
 // type T = Group<number, string>; // ERROR
 type T = Group<Human, Human>; // OK
+
+// 配列
+
+const arr = [0, 123, 456 * -789];
+console.log(arr);
+console.log(arr[0])
+
+const arr1 = [4, 5, 6];
+const arr2 = [1, 2, 3, ...arr1];
+console.log(arr2);
+
+// 配列型
+
+const array3: number[] = [1, 2, 3];
+const array4: Array<{
+    name: string;
+}> = [
+        { name: "山田さん" },
+        { name: "田中さん" },
+        { name: "鈴木さん" },
+    ];
+
+// 読み取り専用
+
+const array5: readonly number[] = [1, 2, 3];
+// array5[0] = 0; // ERROR
+
+// タプル型
+const tuple: [string, number] = ["foo", 0];
