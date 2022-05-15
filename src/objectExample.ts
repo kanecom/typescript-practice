@@ -163,3 +163,34 @@ const array5: readonly number[] = [1, 2, 3];
 
 // タプル型
 const tuple: [string, number] = ["foo", 0];
+
+// 分割代入
+const { foo, bar } = obj;
+console.log(foo);
+console.log(bar);
+
+const nested = {
+    num: 123,
+    obj: {
+        foo: "hello",
+        bar: "world",
+    }
+}
+
+// ネストしたオブジェクトの分割代入
+const { num, obj: { foo: fooString } } = nested;
+console.log(num);
+console.log(fooString);
+
+// 配列の分割代入
+const array6 = [1, 2, 3, 4];
+const [first, second, third] = array6;
+
+// restパターン
+const object = {
+    alpha: "alpha",
+    beta: "beta",
+    gamma: "gamma",
+};
+
+const { alpha, ...restObject } = object;
