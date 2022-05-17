@@ -1,14 +1,18 @@
+const getFizzBuzzString = (number: number): string => {
+    if (number % 3 === 0 && number % 5 === 0) {
+        return "FizzBuzz";
+    } else if (number % 3 === 0) {
+        return "Fizz";
+    } else if (number % 5 === 0) {
+        return "Buzz";
+    }
+    return String(number);
+};
+
 // 通常のFizzBuzz
 for (let i: number = 1; i <= 100; i++) {
-    if (i % 3 === 0 && i % 5 === 0) {
-        console.log("FizzBuzz");
-    } else if (i % 3 === 0) {
-        console.log("Fizz");
-    } else if (i % 5 === 0) {
-        console.log("Buzz")
-    } else {
-        console.log(i);
-    }
+    const message = getFizzBuzzString(i);
+    console.log(message);
 }
 
 // 1行で出力するFizzBuzz
