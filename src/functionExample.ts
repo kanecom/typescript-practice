@@ -58,3 +58,36 @@ const toLowerOrUpper = (str: string, isUpper?: boolean, isLower: boolean = false
 console.log(toLowerOrUpper("Hello", true, false));
 console.log(toLowerOrUpper("Hello"));
 console.log(toLowerOrUpper("Hello", true));
+
+// ジェネリクス
+function repeat<T>(element: T, length: number): T[] {
+    const result: T[] = [];
+    for (let i = 0; i < length; i++){
+        result.push(element)
+    }
+    return result;
+}
+
+console.log(repeat<string>("a", 5));
+console.log(repeat<number>(123, 3));
+
+// 関数名がない場合の型引数リストの書き方
+const repeatNoName = function <T>(element: T, length: number): T[]{
+    const result: T[] = [];
+    for (let i = 0; i < length; i++){
+        result.push(element)
+    }
+    return result;
+}
+
+// アロー関数の型引数リストの書き方
+const repeatArrow = <T>(element: T, length: number): T[] => {
+    const result: T[] = [];
+    for (let i = 0; i < length; i++){
+        result.push(element)
+    }
+    return result;
+}
+
+// 型引数を省略して呼び出す
+console.log(repeat("a", 5));
