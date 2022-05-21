@@ -1,6 +1,6 @@
 export class User {
-    #name: string;
-    #age: number;
+    readonly #name: string;
+    readonly #age: number;
 
     constructor(name: string, age: number) {
         if (name === "") {
