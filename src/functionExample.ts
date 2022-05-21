@@ -35,7 +35,7 @@ const sum = (...args: number[]): number => {
     for (const num of args) {
         result += num;
     }
-    return num;
+    return result;
 };
 
 console.log(sum(1, 2, 3, 4, 5, 6, 7, 8, 9, 10));
