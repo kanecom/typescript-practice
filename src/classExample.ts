@@ -1,19 +1,11 @@
-export class User {
-    readonly #name: string;
-    readonly #age: number;
-
-    constructor(name: string, age: number) {
+function createUser(name: string, age: number): (message: string) => string {
+    return(message: string): string => {
         if (name === "") {
             throw new Error("名前は空にできません");
         }
-        this.#name = name;
-        this.#age = age;
-    }
-
-    public getMessage(message: string): string {
-        return `${this.#name} (${this.#age}) 「${message}」`;
+        return `${name} (${age}) 「${message}」`;
     }
 }
 
-const uhyo = new User("uhyo", 26);
-console.log(uhyo.getMessage("こんにちは"));
+const getMessage = createUser("uhyo", 26);
+console.log(getMessage("こんにちは"));
