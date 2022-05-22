@@ -1,3 +1,5 @@
+export const chapterName = "第3章 オブジェクトの基本とオブジェクトの型";
+
 // オブジェクトリテラル (型なし)
 const obj = {
     foo: 555,

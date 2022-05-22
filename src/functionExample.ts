@@ -1,3 +1,5 @@
+export const chapterName = "第4章 TypeScriptの関数";
+
 // 関数宣言
 function range(min: number, max: number): number[] {
     const result = [];

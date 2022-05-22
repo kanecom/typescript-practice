@@ -1,3 +1,5 @@
+export const chapterName = "第5章 TypeScriptのクラス";
+
 function createUser(name: string, age: number): (message: string) => string {
     return(message: string): string => {
         if (name === "") {
