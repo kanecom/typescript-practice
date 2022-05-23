@@ -46,3 +46,31 @@ function useFunc(func: MysteryFunc) {
     const result = func("uhyo"); // string | number 型
     console.log(result);
 }
+
+// インターセクション型
+type Animal2 = {
+    species: string;
+    age: number;
+}
+
+type Human2 = Animal2 & {
+    name: string;
+}
+
+const tama2: Animal2 = {
+    species: "Felis silvestris catus",
+    age: 3
+};
+
+const uhyo2: Human2 = {
+    species: "Homo sapiens sapiens",
+    age: 26,
+    name: "uhyo"
+};
+
+type StringAndNumber = string & number;
+// ERROR
+// const neverCreated: StringAndNumber = "虚無";
+
+// ERROR
+// const cat1: Animal & string = "cat";
