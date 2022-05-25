@@ -74,3 +74,25 @@ type StringAndNumber = string & number;
 
 // ERROR
 // const cat1: Animal & string = "cat";
+
+// オプチュナルチェイニング
+function useMaybehuman(human: Human | undefined) {
+    const age = human?.age;
+    console.log(age);
+}
+
+type GetTimeFunc = () => Date;
+
+function useTime(getTimeFunc: GetTimeFunc | undefined) {
+    const timeOrUndefined = getTimeFunc?.().toString();
+}
+
+type User2 = {
+    isAdult(): boolean;
+}
+
+function checkFprAdultUser(user: User2 | null) {
+    if (user?.isAdult()) {
+        console.log(user);
+    }
+}
