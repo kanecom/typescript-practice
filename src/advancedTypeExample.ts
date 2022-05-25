@@ -109,3 +109,21 @@ const t: True = true;
 
 type Three = 3n;
 const Three: Three = 3n;
+
+// テンプレートリテラル型
+function getHelloStr(): `Hello, ${string}!` {
+    const rand = Math.random();
+    if (rand < 0.3) {
+        return "Hello, world!";
+    } else if (rand < 0.6) {
+        return "Hello, my world!";
+    } else if (rand < 0.9) {
+        // ERROR
+        // return "Hello, world";
+        return "Hello, JavaScript!";
+    } else {
+        // ERROR
+        // return "Hell, world!";
+        return "Hello, TypeScript!";
+    }
+}
