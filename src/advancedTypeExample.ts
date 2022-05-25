@@ -127,3 +127,52 @@ function getHelloStr(): `Hello, ${string}!` {
         return "Hello, TypeScript!";
     }
 }
+
+// タグ付きユニオン (テクニック)
+type AnimalWithTag = {
+    tag: "animal";
+    species: string;
+}
+
+type HumanWithTag = {
+    tag: "human";
+    name: string;
+}
+
+type UserWithTag = AnimalWithTag | HumanWithTag;
+
+const hana: AnimalWithTag = {
+    tag: "animal",
+    species: "Felis silvestris catus"
+};
+
+const taro: HumanWithTag = {
+    tag: "human",
+    name: "taro"
+}
+
+// ERROR
+// const alien: UserWithTag = {
+//     tag: "alien",
+//     name: "gray"
+// }
+
+function getUserName(user: UserWithTag) {
+    if (user.tag === "human") {
+        return user.name;
+    } else {
+        return "名無し";
+    }
+}
+
+console.log(getUserName(taro));
+console.log(getUserName(hana));
+
+function getUserName2(user: UserWithTag) {
+    switch (user.tag) {
+        case "human":
+            return user.name;
+        case "animal":
+            return "名無し";
+    }
+}
