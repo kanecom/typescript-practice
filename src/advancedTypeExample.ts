@@ -96,3 +96,16 @@ function checkFprAdultUser(user: User2 | null) {
         console.log(user);
     }
 }
+
+// リテラル型
+type FooString = "foo";
+const fooString: FooString = "foo";
+
+type One = 1;
+const one: One = 1;
+
+type True = true;
+const t: True = true;
+
+type Three = 3n;
+const Three: Three = 3n;
