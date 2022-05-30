@@ -15,3 +15,5 @@ const printNumber = (input: Option<number>) => {
         console.log(input.value);
     }
 };
+
+const isSome = (input: Option<number>) => { return input.tag === "hasType" };
