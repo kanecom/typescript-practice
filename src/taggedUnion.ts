@@ -19,14 +19,17 @@ const printNumber = (input: Option<number>) => {
 const isSome = <T>(input: Option<T>): input is Some<T> => { return input.tag === "some" };
 
 const mapOption = <T1, T2> (input: Option < T1 >, func: (value:T1) => T2) => {
-    if (isSome(input)) {
-        const value = func(input.value);
-        return {
-            ...input,
-            value
-        }
+    switch (input.tag) {
+        case "some":
+            return {
+                tag: "some",
+                value: func(input.value)
+            }
+        case "none":
+            return {
+                tag: "none"
+            }
     }
-    return input;
 };
 
 const doubleOperation = (obj: Option<number>) => mapOption(obj, x => x * 2);
