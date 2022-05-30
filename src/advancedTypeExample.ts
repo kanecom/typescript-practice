@@ -176,3 +176,26 @@ function getUserName2(user: UserWithTag) {
             return "名無し";
     }
 }
+
+// lookup型
+type Person = {
+    type: "human";
+    name: string;
+    age: number;
+};
+
+function setAge(person: Person, age: Person["age"]) {
+    return {
+        ...person,
+        age
+    };
+}
+
+const jiro: Person = {
+    type: "human",
+    name: "jiro",
+    age: 26
+};
+
+const jiro2 = setAge(jiro, 27);
+console.log(jiro2);
