@@ -16,4 +16,4 @@ const printNumber = (input: Option<number>) => {
     }
 };
 
-const isSome = (input: Option<number>) => { return input.tag === "hasType" };
+const isSome = <T>(input: Option<T>): input is hasType<T> => { return input.tag === "hasType" };
