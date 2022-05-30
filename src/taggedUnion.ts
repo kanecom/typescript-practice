@@ -1,19 +1,19 @@
 // Optionを実装
-type hasType<T> = {
-    tag: "hasType";
+type Some<T> = {
+    tag: "some";
     value: T;
 };
 
-type noType = {
-    tag: "noType"
+type None = {
+    tag: "none"
 };
 
-type Option<T> = hasType<T> | noType;
+type Option<T> = Some<T> | None;
 
 const printNumber = (input: Option<number>) => {
-    if (input.tag === "hasType") {
+    if (input.tag === "some") {
         console.log(input.value);
     }
 };
 
-const isSome = <T>(input: Option<T>): input is hasType<T> => { return input.tag === "hasType" };
+const isSome = <T>(input: Option<T>): input is Some<T> => { return input.tag === "some" };
