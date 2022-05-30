@@ -223,3 +223,16 @@ function convertUnits(value: number, unit: keyof typeof mmConversionTable) {
 }
 
 console.log(convertUnits(5600, "m"));
+
+//keyou, lookup型とジェネリクスの活用例
+function get<T, K extends keyof T>(obj: T, key: K): T[K] {
+    return obj[key];
+}
+
+const saburou: Human = {
+    name: "saburou",
+    age: 26
+};
+
+const saburouName = get(saburou, "name");
+const saburouAge = get(saburou, "age");
