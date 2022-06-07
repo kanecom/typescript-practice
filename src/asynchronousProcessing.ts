@@ -23,3 +23,7 @@ p2.then((result) => {
 p2.catch((error: unknown) => {
     console.log("失敗", error);
 });
+
+p2.finally(() => {
+    console.log("終わりました");
+});
