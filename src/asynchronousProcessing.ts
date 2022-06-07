@@ -14,3 +14,12 @@ const p = readFile("uhyo.txt", "utf8");
 p.then((data) => {
     console.log(data)
 });
+
+const p2 = readFile("foo.txt", "utf8");
+p2.then((result) => {
+    console.log("成功", result);
+});
+
+p2.catch((error: unknown) => {
+    console.log("失敗", error);
+});
