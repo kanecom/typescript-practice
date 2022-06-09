@@ -27,3 +27,23 @@ p2.catch((error: unknown) => {
 p2.finally(() => {
     console.log("終わりました");
 });
+
+const p3 = new Promise<number>((resolve) => {
+    setTimeout(() => {
+        resolve(100);
+    }, 3000);
+});
+
+p3.then((num) => {
+    console.log(`結果は${num}`);
+});
+
+const sleep = (duration: number) => {
+    return new Promise<void>((resolve) => {
+        setTimeout(resolve, duration);
+    })
+}
+
+sleep(3000).then(() => {
+    console.log('3秒立ちました');
+});
