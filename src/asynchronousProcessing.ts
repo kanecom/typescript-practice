@@ -49,6 +49,7 @@ sleep(3000).then(() => {
 });
 
 async function get3(): Promise<number> {
+    await sleep(1000);
     return 3;
 }
 
