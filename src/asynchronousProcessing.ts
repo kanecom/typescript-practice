@@ -47,3 +47,12 @@ const sleep = (duration: number) => {
 sleep(3000).then(() => {
     console.log('3秒立ちました');
 });
+
+async function get3(): Promise<number> {
+    return 3;
+}
+
+const p4 = get3();
+p4.then(num => {
+    console.log(`num is ${num}`);
+});
